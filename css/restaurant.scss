@@ -158,9 +158,37 @@ body{
                     font-family: 'Shrikhand', cursive;
                     font-size: 30px;
                 }
-                &>i{
-                    margin-right: 10px;
-                }
+                .global-box__icon{
+                    cursor: pointer;
+                    position: relative;
+                    font-size: 25px;
+                    margin: 20px;
+                    font-weight: 100;
+                    opacity: (1);
+                    &:hover{
+                        .animate-icon{
+                            transform: scale(1.1);
+                            
+                            }
+                        }
+    
+                    } 
+                    .animate-icon{
+                        cursor: pointer;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        right: 0;
+                        transform: scale(0);
+                        transition: transform 600ms ease-in-out 0.4s;
+                        color: $primary;
+                        &:hover{
+                            .animate-icon{
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
             }
             &>section{
                 width: 95%;
