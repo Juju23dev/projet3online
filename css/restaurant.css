@@ -260,8 +260,39 @@ body main #global-box #title_container .global-box__title {
   font-size: 30px;
 }
 
-body main #global-box #title_container > i {
-  margin-right: 10px;
+body main #global-box #title_container .global-box__icon {
+  cursor: pointer;
+  position: relative;
+  font-size: 25px;
+  margin: 20px;
+  font-weight: 100;
+  opacity: 1;
+}
+
+body main #global-box #title_container .global-box__icon:hover .animate-icon {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+body main #global-box #title_container .animate-icon {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: -webkit-transform 600ms ease-in-out 0.4s;
+  transition: -webkit-transform 600ms ease-in-out 0.4s;
+  transition: transform 600ms ease-in-out 0.4s;
+  transition: transform 600ms ease-in-out 0.4s, -webkit-transform 600ms ease-in-out 0.4s;
+  color: #9356DC;
+}
+
+body main #global-box #title_container .animate-icon:hover .animate-icon {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 body main #global-box > section {
