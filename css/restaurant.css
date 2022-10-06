@@ -6,19 +6,19 @@
 
 @-webkit-keyframes text-length {
   0% {
-    width: 17rem;
+    width: 80%;
   }
   100% {
-    width: 15rem;
+    width: 60%;
   }
 }
 
 @keyframes text-length {
   0% {
-    width: 17rem;
+    width: 80%;
   }
   100% {
-    width: 15rem;
+    width: 60%;
   }
 }
 
@@ -298,6 +298,13 @@ body main #global-box #title_container .animate-icon:hover .animate-icon {
 body main #global-box > section {
   width: 95%;
   margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 body main #global-box > section .section__title {
@@ -332,6 +339,10 @@ body main #global-box > section .section__product__box {
   height: 4.5rem;
   -webkit-animation: onload 1.5s both 2.5s;
           animation: onload 1.5s both 2.5s;
+  width: 90%;
+  max-width: 22rem;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
 body main #global-box > section .section__product__box:nth-child(4) {
@@ -393,7 +404,7 @@ body main #global-box > section .section__product__box .valider .fa-circle-check
 
 body main #global-box > section .section__product__box .product__descripton {
   height: 100%;
-  width: 18rem;
+  width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -433,6 +444,7 @@ body main #global-box > section .section__product__box .section__product__price 
   height: 100%;
   padding: 0 20px 15px 10px;
   margin: 0;
+  background-color: #fff;
   border: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -464,8 +476,8 @@ body main #global-box .order-box__text {
   width: 215px;
   height: 50px;
   margin: 30px 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(#bc95e9), to(#8641d8));
-  background: linear-gradient(#bc95e9, #8641d8);
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff93e1), to(#9356DC));
+  background: linear-gradient(#ff93e1, #9356DC);
   border-radius: 25px;
   -webkit-box-shadow: 0px 4px 12px #9b9b9b;
           box-shadow: 0px 4px 12px #9b9b9b;
@@ -483,7 +495,7 @@ body main #global-box .order-box__text {
 }
 
 body main #global-box .order-box__text:hover::after {
-  opacity: 1;
+  opacity: 0.3;
 }
 
 body main #global-box .order-box__text:hover {
@@ -498,8 +510,7 @@ body main #global-box .order-box__text::after {
   position: absolute;
   height: 100%;
   width: 100%;
-  background: -webkit-gradient(linear, left top, left bottom, from(#d7c0f2), to(#a16be0));
-  background: linear-gradient(#d7c0f2, #a16be0);
+  background: #fff;
   border-radius: 25px;
   opacity: 0;
   z-index: -1;
@@ -541,9 +552,29 @@ body footer .footer__list .footer__bold {
   font-weight: 400;
 }
 
+@media screen and (min-width: 360px) {
+  @-webkit-keyframes text-length {
+    0% {
+      width: 80%;
+    }
+    100% {
+      width: 70%;
+    }
+  }
+  @keyframes text-length {
+    0% {
+      width: 80%;
+    }
+    100% {
+      width: 70%;
+    }
+  }
+}
+
 @media screen and (min-width: 450px) {
   body #global-picture-container {
-    height: 35rem;
+    height: auto;
+    max-height: 30rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -572,12 +603,14 @@ body footer .footer__list .footer__bold {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
   }
   body section .section__product__box {
     width: 22rem !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-item-align: center;
+        align-self: center;
   }
   body footer {
     display: -webkit-box;
@@ -635,6 +668,9 @@ body footer .footer__list .footer__bold {
   body #global-box section {
     width: auto !important;
     margin: 30px !important;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   body #global-box .global-box__order-box {
     width: 100%;

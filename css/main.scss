@@ -143,7 +143,7 @@ body{
                 width: 215px;
                 height: 50px;
                 margin: 30px 0;
-                background: linear-gradient( lighten($primary, 15%) , darken($primary, 5%));
+                background: linear-gradient( lighten($secondary, 5%) ,$primary);
                 border-radius: 25px; 
                 box-shadow: 0px 4px 12px $shadow;               
                 color: $white;
@@ -157,7 +157,7 @@ body{
                 transition: all 1s cubic-bezier(.16,.96,.18,1);
                 &:hover{
                     &::after{
-                        opacity: 1;
+                        opacity: 0.3;
                     }
                     &{
                         
@@ -171,7 +171,7 @@ body{
                     position: absolute;
                     height: 100%;
                     width: 100%;
-                    background: linear-gradient( lighten($primary, 25%) , lighten($primary, 5%));
+                    background: $white;
                     border-radius: 25px; 
                     opacity: 0;
                     z-index: -1;
@@ -270,116 +270,123 @@ body{
             font-weight: 700;
             padding: 0px 10px;
         }
-
-        .main__product__card{
-            height: 250px;
-            width: 350px;
-            border-radius: 15px;
-            margin: 0px 0px 20px 0px;
-            overflow: hidden;
-            background-color: $white;
-            box-shadow: 0px 4px 10px darken($background, 10%);
-            .product__picture__button{
-                display: contents;
-                .product__picture__container{
-                    height: 70%;
-                    overflow: hidden;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    &>img{
-                        width: 100%;
-                    }    
-                }
-                .news{
-                    position: relative;
-                    z-index: 1;
-                    &::after{
-                        content: 'Nouveau';
-                        position: absolute;
-                        top: 5%;
-                        left: 70%;
-                        height: 2rem;
-                        width: 6rem;
-                        border-radius: 5px;
-                        background-color: $tertiary;
-                        box-shadow: 0 5px 10px #00000078;
-                        color: darken($tertiary, 50%);
-                        font-family:'roboto', sans-serif;
-                        font-weight: 500;
+        .main__block{
+            width: 100%;
+            padding: 0 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .main__product__card{
+                height: 250px;
+                width: 100%;
+                max-width: 350px;
+                border-radius: 15px;
+                margin: 0px 5px 20px 5px;
+                overflow: hidden;
+                background-color: $white;
+                box-shadow: 0px 4px 10px darken($background, 10%);
+                .product__picture__button{
+                    display: contents;
+                    .product__picture__container{
+                        height: 70%;
+                        overflow: hidden;
                         display: flex;
                         justify-content: center;
                         align-items: center;
+                        &>img{
+                            width: 100%;
+                        }    
+                    }
+                    .news{
+                        position: relative;
                         z-index: 1;
-                    }
-                }
-            }
-            
-            .product__content__container{
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                .product__content__button{
-                    display: contents;
-                    .content__text-box{
-                        padding: 10px;
-                        font-size: 15px;
-                        color: black;
-                        display: flex;
-                        align-items: left;
-                        justify-content: center;
-                        flex-direction: column;
-                        .content__title{
-                            font-family: 'roboto', sans-serif;
+                        &::after{
+                            content: 'Nouveau';
+                            position: absolute;
+                            top: 5%;
+                            left: 70%;
+                            height: 2rem;
+                            width: 6rem;
+                            border-radius: 5px;
+                            background-color: $tertiary;
+                            box-shadow: 0 5px 10px #00000078;
+                            color: darken($tertiary, 50%);
+                            font-family:'roboto', sans-serif;
                             font-weight: 500;
-                            margin: 1px 10px;
-                        }
-                        .content__text{
-                            font-family: 'roboto', sans-serif;
-                            font-weight: 300;
-                            margin: 1px 10px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            z-index: 1;
                         }
                     }
-                }  
-                .product__content__icon{
-                cursor: pointer;
-                position: relative;
-                font-size: 25px;
-                margin: 20px;
-                font-weight: 100;
-                opacity: (1);
-                &:hover{
-                    .animate-icon{
-                        transform: scale(1.1);
-                        
-                        }
-                    }
-
                 }
                 
-                  
-                
-                .animate-icon{
+                .product__content__container{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    .product__content__button{
+                        display: contents;
+                        .content__text-box{
+                            padding: 10px;
+                            font-size: 15px;
+                            color: black;
+                            display: flex;
+                            align-items: start;
+                            justify-content: center;
+                            flex-direction: column;
+                            .content__title{
+                                font-family: 'roboto', sans-serif;
+                                font-weight: 500;
+                                margin: 1px 10px;
+                            }
+                            .content__text{
+                                font-family: 'roboto', sans-serif;
+                                font-weight: 300;
+                                margin: 1px 10px;
+                            }
+                        }
+                    }  
+                    .product__content__icon{
                     cursor: pointer;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    bottom: 0;
-                    right: 0;
-                    transform: scale(0);
-                    transition: transform 600ms ease-in-out 0.4s;
-                    color: $primary;
+                    position: relative;
+                    font-size: 25px;
+                    margin: 20px;
+                    font-weight: 100;
+                    opacity: (1);
                     &:hover{
                         .animate-icon{
                             transform: scale(1.1);
+                            
+                            }
+                        }
+
+                    }
+                    
+                    
+                    
+                    .animate-icon{
+                        cursor: pointer;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        right: 0;
+                        transform: scale(0);
+                        transition: transform 600ms ease-in-out 0.4s;
+                        color: $primary;
+                        &:hover{
+                            .animate-icon{
+                                transform: scale(1.1);
+                            }
                         }
                     }
-                }
-                
+                    
 
-               
-            }           
-        }            
+                
+                }           
+            } 
+        }           
     }
     footer{
         background-color: rgb(60, 60, 60);
@@ -447,8 +454,11 @@ body{
     }
     .main__block{
         display: flex;
+        flex-direction: row!important;
+        justify-content: center;
+        flex-wrap: wrap;
         .main__product__card{
-            margin: 30px;
+            margin: 10px!important;
         }
     }
     .footer__list{
